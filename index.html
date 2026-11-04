@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Global Bank | Next-Gen Digital Banking</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="app-container">
+
+  <!-- =========================================================================
+       SIDEBAR NAVIGATION
+       ========================================================================= -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <a href="#" class="logo-brand">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-name">APEX BANK</span>
+          <span class="brand-tier">Private Wealth</span>
+        </div>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-title">Core Banking</div>
+      <a class="nav-item active" data-view="dashboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"></rect>
+          <rect x="14" y="3" width="7" height="7"></rect>
+          <rect x="14" y="14" width="7" height="7"></rect>
+          <rect x="3" y="14" width="7" height="7"></rect>
+        </svg>
+        <span>Overview</span>
+      </a>
+
+      <a class="nav-item" data-view="transfers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <polyline points="19 12 12 19 5 12"></polyline>
+        </svg>
+        <span>Transfers & Pay</span>
+        <span class="nav-badge">Instant</span>
+      </a>
+
+      <a class="nav-item" data-view="cards">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+          <line x1="1" y1="10" x2="23" y2="10"></line>
+        </svg>
+        <span>Cards Hub</span>
+      </a>
+
+      <a class="nav-item" data-view="goals">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+        </svg>
+        <span>Vaults & Goals</span>
+        <span class="nav-badge" style="background: rgba(6, 182, 212, 0.2); color: #06B6D4;">4.85% APY</span>
+      </a>
+
+      <a class="nav-item" data-view="bills">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+          <polyline points="10 9 9 9 8 9"></polyline>
+        </svg>
+        <span>Bill Pay</span>
+      </a>
+
+      <div class="nav-section-title">Institutional Tools</div>
+      <a class="nav-item" data-view="loans">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path>
+          <line x1="12" y1="18" x2="12" y2="20"></line>
+          <line x1="12" y1="4" x2="12" y2="6"></line>
+        </svg>
+        <span>Loan Calculator</span>
+      </a>
+
+      <a class="nav-item" data-view="analytics">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        <span>Spend Analytics</span>
+      </a>
+
+      <a class="nav-item" data-view="security">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+        <span>Security & Settings</span>
+      </a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div class="user-profile-badge" id="sidebarProfileBadge" title="Click to switch profile (Personal / Business)">
+        <img src="" alt="User Avatar" class="user-avatar user-avatar-display" />
+        <div class="user-info">
+          <div class="user-name user-name-display">Loading...</div>
+          <div class="user-account-type user-tier-display">Premier Tier</div>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: var(--text-muted);">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       MAIN CONTENT WRAPPER
+       ========================================================================= -->
+  <div class="main-wrapper">
+
+    <!-- TOP HEADER -->
+    <header class="app-header">
+      <div class="header-left">
+        <button class="menu-toggle-btn" id="mobileMenuToggleBtn" aria-label="Toggle Navigation">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="page-title-box">
+          <h1 class="page-title" id="currentPageTitle">Financial Overview</h1>
+          <p class="page-subtitle" id="currentPageSubtitle">Welcome back to your premier command center</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- FDIC / Encryption Badge -->
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1); padding: 6px 12px; border-radius: var(--radius-full); font-weight: 600;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>FDIC Insured · 256-Bit TLS</span>
+        </div>
+
+        <!-- Theme Toggle -->
+        <button class="action-icon-btn" id="themeToggleBtn" title="Toggle Light/Dark Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+          </svg>
+        </button>
+
+        <!-- Notifications Bell -->
+        <button class="action-icon-btn" id="headerNotificationsBtn" title="Notifications">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span class="notification-dot" id="notificationCountBadge" style="display: none;"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- VIEWS CONTAINER -->
+    <main class="view-container">
+
+      <!-- ===================================================================
+           VIEW: DASHBOARD / OVERVIEW
+           =================================================================== -->
+      <section class="view-section active" id="view_dashboard">
+        <!-- Top Net Worth Banner -->
+        <div class="net-worth-banner">
+          <div class="net-worth-left">
+            <div class="balance-header-row">
+              <span class="balance-label">Total Liquid Capital</span>
+              <button class="privacy-toggle-btn" id="privacyToggleBtn" title="Hide/Unhide Balances">
+                <span id="privacyEyeIcon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div class="net-worth-amount">
+              <span id="totalNetWorthDisplay">$0.00</span>
+              <span class="net-worth-trend">▲ +8.4% this mo</span>
+            </div>
+          </div>
+
+          <div class="net-worth-actions">
+            <button class="btn btn-primary btn-lg" id="quickActionSendBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+              <span>Send Money</span>
+            </button>
+
+            <button class="btn btn-secondary btn-lg" id="quickActionDepositBtn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+              <span>Deposit Check</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Quick Action Tiles -->
+        <div class="quick-actions-grid">
+          <div class="quick-action-card" data-goto-view="transfers">
+            <div class="quick-action-icon icon-emerald">💸</div>
+            <span class="quick-action-label">Instant Pay</span>
+          </div>
+          <div class="quick-action-card" id="quickTileDeposit" onclick="window.openModal('mobileCheckDepositModal')">
+            <div class="quick-action-icon icon-cyan">📸</div>
+            <span class="quick-action-label">Scan Check</span>
+          </div>
+          <div class="quick-action-card" data-goto-view="bills">
+            <div class="quick-action-icon icon-amber">🧾</div>
+            <span class="quick-action-label">Pay Bills</span>
+          </div>
+          <div class="quick-action-card" data-goto-view="goals">
+            <div class="quick-action-icon icon-purple">🎯</div>
+            <span class="quick-action-label">Vaults (4.85%)</span>
+          </div>
+          <div class="quick-action-card" data-goto-view="cards">
+            <div class="quick-action-icon icon-blue">💳</div>
+            <span class="quick-action-label">Manage Cards</span>
+          </div>
+          <div class="quick-action-card" data-goto-view="loans">
+            <div class="quick-action-icon icon-rose">🏛️</div>
+            <span class="quick-action-label">Financing</span>
+          </div>
+        </div>
+
+        <!-- Accounts Subgrid -->
+        <div class="card-panel-header">
+          <div class="card-panel-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Linked Accounts</span>
+          </div>
+          <span class="card-panel-subtitle">Multi-currency & FDIC Insured</span>
+        </div>
+        <div class="accounts-subgrid" id="accountsSubgridContainer"></div>
+
+        <!-- Dashboard Multi-column Layout -->
+        <div class="dashboard-grid">
+          <!-- Left Column: Transactions Feed -->
+          <div>
+            <div class="card-panel">
+              <div class="card-panel-header">
+                <div>
+                  <h3 class="card-panel-title">Recent Activity</h3>
+                  <p class="card-panel-subtitle">Click any transaction to view official electronic advice / receipt</p>
+                </div>
+              </div>
+
+              <!-- Filter Bar -->
+              <div class="transactions-filter-bar">
+                <div class="search-input-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                  </svg>
+                  <input type="text" id="txSearchInput" placeholder="Search merchant, tag, or note..." />
+                </div>
+
+                <select class="filter-select" id="txCategorySelect">
+                  <option value="all">All Categories</option>
+                  <option value="Income">Income & Dividends</option>
+                  <option value="Dining">Dining & Food</option>
+                  <option value="Groceries">Groceries</option>
+                  <option value="Technology">Tech & Equipment</option>
+                  <option value="Travel">Travel & Lodging</option>
+                  <option value="Transfer">Transfers & P2P</option>
+                </select>
+
+                <select class="filter-select" id="txTypeSelect">
+                  <option value="all">All Types</option>
+                  <option value="credit">Income Only (+)</option>
+                  <option value="debit">Expenses Only (-)</option>
+                </select>
+              </div>
+
+              <!-- Transactions Feed -->
+              <div class="transactions-list" id="recentTransactionsList"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Spend Analytics Chart & Summary -->
+          <div>
+            <div class="card-panel">
+              <div class="card-panel-header">
+                <h3 class="card-panel-title">Cash Flow Trends</h3>
+                <span style="font-size: 0.75rem; color: var(--accent-emerald); font-weight: 700;">● Inflow vs ● Outflow</span>
+              </div>
+              <div style="position: relative; width: 100%; height: 230px;">
+                <canvas id="spendingTrendChart"></canvas>
+              </div>
+              <div style="display: flex; justify-content: space-between; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+                <div>
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Monthly Net Inflow</div>
+                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--accent-emerald);">+$3,730.00</div>
+                </div>
+                <div style="text-align: right;">
+                  <div style="font-size: 0.75rem; color: var(--text-muted);">Savings Rate</div>
+                  <div style="font-size: 1.15rem; font-weight: 800; color: var(--accent-cyan);">52.1%</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Card Shortcut -->
+            <div class="card-panel">
+              <div class="card-panel-header">
+                <h3 class="card-panel-title">Primary Payment Card</h3>
+                <button class="btn btn-sm btn-secondary" data-goto-view="cards">Manage</button>
+              </div>
+              <div style="padding: 16px; background: linear-gradient(135deg, #1E293B, #0F172A); border-radius: var(--radius-lg); border: 1px solid rgba(255, 255, 255, 0.1);">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 24px;">
+                  <div style="font-size: 0.75rem; color: #94A3B8;">TITANIUM WORLD ELITE</div>
+                  <div style="color: #10B981; font-weight: 700; font-size: 0.75rem;">● ACTIVE</div>
+                </div>
+                <div style="font-family: monospace; font-size: 1.1rem; letter-spacing: 0.1em; color: #FFFFFF; margin-bottom: 16px;">
+                  •••• •••• •••• 8821
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: #94A3B8;">
+                  <span>Exp: 09/29</span>
+                  <span>VISA ELITE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: TRANSFERS & PAYMENTS
+           =================================================================== -->
+      <section class="view-section" id="view_transfers">
+        <!-- Frequent Beneficiaries Row -->
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">Frequent Payees & Contacts</h3>
+              <p class="card-panel-subtitle">Click any contact to auto-fill payment form</p>
+            </div>
+          </div>
+          <div class="beneficiaries-scroll" id="beneficiariesScrollList"></div>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Left: Send Money Form -->
+          <div class="card-panel">
+            <h3 class="card-panel-title" style="margin-bottom: 16px;">Money Movement Center</h3>
+
+            <!-- Transfer Type Tabs -->
+            <div class="transfer-tabs">
+              <button class="transfer-tab-btn active" data-transfer-type="p2p">Apex Pay (P2P)</button>
+              <button class="transfer-tab-btn" data-transfer-type="internal">Account-to-Account</button>
+              <button class="transfer-tab-btn" data-transfer-type="wire">Domestic Wire</button>
+              <button class="transfer-tab-btn" data-transfer-type="fx">SWIFT / Global</button>
+            </div>
+
+            <form id="sendMoneyForm">
+              <!-- Source Account -->
+              <div class="form-group">
+                <label class="form-label">Pay From Account</label>
+                <select class="form-select" id="transferSourceAccount"></select>
+              </div>
+
+              <!-- P2P Content -->
+              <div class="transfer-type-content" id="transferPanel_p2p">
+                <div class="form-group">
+                  <label class="form-label">Recipient (Email, Phone, or @Handle)</label>
+                  <input type="text" class="form-input" id="p2pRecipientInput" placeholder="e.g. alex.r@apexbank.com or (555) 234-8921" />
+                </div>
+              </div>
+
+              <!-- Internal Content -->
+              <div class="transfer-type-content" id="transferPanel_internal" style="display: none;">
+                <div class="form-group">
+                  <label class="form-label">Deposit Into Account</label>
+                  <select class="form-select" id="transferInternalDestAccount"></select>
+                </div>
+              </div>
+
+              <!-- Wire Content -->
+              <div class="transfer-type-content" id="transferPanel_wire" style="display: none;">
+                <div class="form-group">
+                  <label class="form-label">Recipient Full Legal Name</label>
+                  <input type="text" class="form-input" id="wireRecipientName" placeholder="Beneficiary name" />
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="form-group">
+                    <label class="form-label">Routing Number (9 Digits)</label>
+                    <input type="text" class="form-input" id="wireRoutingNumber" placeholder="021000021" maxlength="9" />
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Account Number</label>
+                    <input type="text" class="form-input" id="wireAccountNumber" placeholder="Account number" />
+                  </div>
+                </div>
+                <div style="font-size: 0.78rem; color: var(--accent-amber); margin-bottom: 12px;">
+                  ⚠️ Domestic wire settlement fee: $15.00 (Same-day clearance)
+                </div>
+              </div>
+
+              <!-- FX Content -->
+              <div class="transfer-type-content" id="transferPanel_fx" style="display: none;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                  <div class="form-group">
+                    <label class="form-label">Destination Currency</label>
+                    <select class="form-select" id="fxCurrencySelect">
+                      <option value="EUR">EUR (€) - Eurozone</option>
+                      <option value="GBP">GBP (£) - United Kingdom</option>
+                      <option value="JPY">JPY (¥) - Japan</option>
+                      <option value="CAD">CAD ($) - Canada</option>
+                      <option value="CHF">CHF (Fr) - Switzerland</option>
+                      <option value="AUD">AUD ($) - Australia</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">SWIFT / BIC Code</label>
+                    <input type="text" class="form-input" id="fxSwiftInput" placeholder="APEXUS33XXX" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">International IBAN Number</label>
+                  <input type="text" class="form-input" id="fxIbanInput" placeholder="GB29 APEX 0210 0002 1099 21" />
+                </div>
+              </div>
+
+              <!-- Amount Input -->
+              <div class="form-group">
+                <label class="form-label">Transfer Amount (USD)</label>
+                <div class="amount-input-container">
+                  <span class="currency-symbol">$</span>
+                  <input type="number" step="0.01" min="1" class="form-input amount-input-lg" id="transferAmountInput" placeholder="0.00" required />
+                </div>
+              </div>
+
+              <!-- Note -->
+              <div class="form-group">
+                <label class="form-label">Memo / Description (Optional)</label>
+                <input type="text" class="form-input" id="transferNoteInput" placeholder="What is this for?" />
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                <span>Confirm & Authorize Transfer</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Right: Live FX Rates & Currency Calculator -->
+          <div>
+            <div class="card-panel">
+              <h3 class="card-panel-title" style="margin-bottom: 16px;">Global FX Currency Converter</h3>
+              <p class="card-panel-subtitle" style="margin-bottom: 20px;">Institutional interbank rate with zero hidden spread markup.</p>
+
+              <div class="form-group">
+                <label class="form-label">You Send (USD)</label>
+                <input type="number" class="form-input" id="fxCalcAmount" value="1000" />
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Convert To</label>
+                <select class="form-select" id="fxCalcCurrency">
+                  <option value="EUR">EUR (€) - Euro</option>
+                  <option value="GBP">GBP (£) - British Pound</option>
+                  <option value="JPY">JPY (¥) - Japanese Yen</option>
+                  <option value="CAD">CAD ($) - Canadian Dollar</option>
+                  <option value="CHF">CHF (Fr) - Swiss Franc</option>
+                  <option value="AUD">AUD ($) - Australian Dollar</option>
+                </select>
+              </div>
+
+              <div style="background: var(--bg-card); padding: 18px; border-radius: var(--radius-lg); border: 1px solid var(--border-color); text-align: center; margin-top: 20px;">
+                <div style="font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase;">Recipient Receives Approximately</div>
+                <div style="font-size: 2rem; font-weight: 800; color: var(--accent-emerald); margin: 6px 0;" id="fxCalcResult">
+                  0.00 EUR
+                </div>
+                <div style="font-size: 0.75rem; color: var(--text-muted);">Real-time mid-market rate · Settles in minutes</div>
+              </div>
+            </div>
+
+            <!-- Wire limits advice -->
+            <div class="card-panel">
+              <h4 style="font-size: 0.95rem; font-weight: 700; margin-bottom: 8px;">Transfer Security Safeguards</h4>
+              <ul style="font-size: 0.8rem; color: var(--text-secondary); padding-left: 20px; line-height: 1.6;">
+                <li>Transfers over $10,000 are subject to instant SMS OTP 2-factor authentication.</li>
+                <li>P2P transfers within the Apex network settle in real-time 24/7/365.</li>
+                <li>Zero liability protection against unauthorized electronic transfers.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: CARDS MANAGEMENT
+           =================================================================== -->
+      <section class="view-section" id="view_cards">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+          <div id="cardSelectorTabs" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+          <button class="btn btn-primary" id="openNewCardModalBtn">
+            + Issue New Virtual Card
+          </button>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Left: 3D Interactive Card Showcase -->
+          <div class="card-panel" style="text-align: center;">
+            <div class="card-showcase-container" id="cardsShowcaseWrapper"></div>
+            <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 14px;">
+              💡 Click the card to flip it and reveal the CVV security code and signature panel.
+            </p>
+          </div>
+
+          <!-- Right: Security & Limit Controls -->
+          <div class="card-panel">
+            <h3 class="card-panel-title">Card Security & Spending Limits</h3>
+            <p class="card-panel-subtitle">Changes apply instantly in real-time across Apple Pay, Google Wallet & physical point-of-sale.</p>
+
+            <div id="cardControlsWrapper"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: GOALS & SAVINGS VAULTS
+           =================================================================== -->
+      <section class="view-section" id="view_goals">
+        <!-- High-Yield APY Promo Header -->
+        <div class="net-worth-banner" style="margin-bottom: 24px;">
+          <div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--accent-cyan); text-transform: uppercase;">
+              Apex Compound Growth Engine
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #FFFFFF; margin: 4px 0;">
+              4.85% Annual Percentage Yield
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-secondary); max-width: 540px;">
+              Your funds earn compound interest every 24 hours. Zero lockup periods, zero minimum balances, and unlimited automated smart roundups.
+            </p>
+          </div>
+          <button class="btn btn-primary btn-lg" onclick="window.openModal('newGoalModal')">
+            + Create New Savings Vault
+          </button>
+        </div>
+
+        <div class="goals-grid" id="goalsListContainer"></div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: BILL PAY & SUBSCRIPTIONS
+           =================================================================== -->
+      <section class="view-section" id="view_bills">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">Active Recurring Bills & Subscriptions</h3>
+              <p class="card-panel-subtitle">Pay immediately or enable automated electronic recurring drafts</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="window.showToast('Biller connection portal opened', 'info')">
+              + Connect New Utility / Biller
+            </button>
+          </div>
+
+          <div class="transactions-list" id="billsListContainer"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: LOANS & FINANCING CALCULATOR
+           =================================================================== -->
+      <section class="view-section" id="view_loans">
+        <div class="dashboard-grid">
+          <!-- Calculator Controls -->
+          <div class="card-panel">
+            <h3 class="card-panel-title" style="margin-bottom: 8px;">Interactive Financing & Mortgage Simulator</h3>
+            <p class="card-panel-subtitle" style="margin-bottom: 24px;">Calculate exact monthly payments, amortization interest, and terms.</p>
+
+            <!-- Principal Slider -->
+            <div class="form-group" style="margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <label class="form-label">Loan / Credit Amount</label>
+                <span style="font-weight: 700; color: var(--accent-emerald); font-size: 1.1rem;" id="calcLoanAmountDisplay">$50,000</span>
+              </div>
+              <input type="range" class="range-slider-input" id="loanAmountSlider" min="5000" max="500000" step="5000" value="50000">
+            </div>
+
+            <!-- Interest Rate Slider -->
+            <div class="form-group" style="margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <label class="form-label">Annual Interest Rate (APR)</label>
+                <span style="font-weight: 700; color: var(--accent-cyan); font-size: 1.1rem;" id="calcLoanRateDisplay">5.5%</span>
+              </div>
+              <input type="range" class="range-slider-input" id="loanRateSlider" min="2.0" max="18.0" step="0.25" value="5.5">
+            </div>
+
+            <!-- Term Duration Slider -->
+            <div class="form-group" style="margin-bottom: 24px;">
+              <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                <label class="form-label">Loan Term (Duration)</label>
+                <span style="font-weight: 700; color: var(--accent-purple); font-size: 1.1rem;" id="calcLoanTermDisplay">5 Years (60 mos)</span>
+              </div>
+              <input type="range" class="range-slider-input" id="loanTermSlider" min="1" max="30" step="1" value="5">
+            </div>
+
+            <button class="btn btn-primary btn-lg" style="width: 100%;" onclick="window.showToast('Instant pre-approval application submitted!', 'success')">
+              Apply For Pre-Approved Financing
+            </button>
+          </div>
+
+          <!-- Calculation Results Breakdown -->
+          <div class="card-panel">
+            <h3 class="card-panel-title" style="margin-bottom: 16px;">Financing Breakdown</h3>
+
+            <div style="background: var(--bg-card); padding: 24px; border-radius: var(--radius-xl); border: 1px solid var(--border-color); text-align: center; margin-bottom: 20px;">
+              <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Estimated Monthly Payment</div>
+              <div style="font-size: 2.8rem; font-weight: 800; color: var(--accent-emerald); margin: 6px 0;" id="calcMonthlyPaymentResult">
+                $0.00
+              </div>
+              <div style="font-size: 0.78rem; color: var(--text-secondary);">Principal & Interest included</div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--border-color);">
+                <span style="color: var(--text-secondary);">Total Interest Paid:</span>
+                <span style="font-weight: 700; color: var(--accent-rose);" id="calcTotalInterestResult">$0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-bottom: 10px; border-bottom: 1px solid var(--border-color);">
+                <span style="color: var(--text-secondary);">Total Repayment:</span>
+                <span style="font-weight: 700; color: var(--text-primary);" id="calcTotalRepaymentResult">$0.00</span>
+              </div>
+              <div style="display: flex; justify-content: space-between;">
+                <span style="color: var(--text-secondary);">Origination Fee:</span>
+                <span style="font-weight: 700; color: var(--accent-emerald);">$0.00 (Waived for Elite Tier)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: SPEND ANALYTICS
+           =================================================================== -->
+      <section class="view-section" id="view_analytics">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">Comprehensive Financial Health & Spend Analytics</h3>
+              <p class="card-panel-subtitle">Visual cash flow breakdown and AI-driven spending patterns</p>
+            </div>
+          </div>
+
+          <div class="dashboard-grid">
+            <div style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+              <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 12px;">Top Outflow Categories</h4>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+                    <span>✈️ Travel & First Class</span>
+                    <span style="font-weight: 700;">$2,840.00 (42%)</span>
+                  </div>
+                  <div class="goal-progress-bar-bg" style="margin: 0;"><div class="goal-progress-fill" style="width: 42%;"></div></div>
+                </div>
+
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+                    <span>💻 Technology & Hardware</span>
+                    <span style="font-weight: 700;">$1,299.00 (24%)</span>
+                  </div>
+                  <div class="goal-progress-bar-bg" style="margin: 0;"><div class="goal-progress-fill" style="width: 24%; background: #06B6D4;"></div></div>
+                </div>
+
+                <div>
+                  <div style="display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 4px;">
+                    <span>🥑 Organic Groceries & Dining</span>
+                    <span style="font-weight: 700;">$497.72 (12%)</span>
+                  </div>
+                  <div class="goal-progress-bar-bg" style="margin: 0;"><div class="goal-progress-fill" style="width: 12%; background: #F59E0B;"></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="background: var(--bg-card); padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+              <h4 style="font-size: 0.9rem; font-weight: 700; margin-bottom: 12px;">Financial Scorecard</h4>
+              <div style="text-align: center; padding: 14px;">
+                <div style="font-size: 3rem; font-weight: 900; color: var(--accent-emerald);">842</div>
+                <div style="font-weight: 700; color: var(--text-primary); margin-top: 4px;">Exceptional Credit & Capital Stability</div>
+                <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+                  Your debt-to-income ratio is in the top 5% of all private bank account holders nationwide.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           VIEW: SECURITY & PROFILE SETTINGS
+           =================================================================== -->
+      <section class="view-section" id="view_security">
+        <div class="card-panel">
+          <div class="card-panel-header">
+            <div>
+              <h3 class="card-panel-title">Institutional Security & Authentication</h3>
+              <p class="card-panel-subtitle">Manage multi-factor verification, statement downloads, and session governance.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div class="control-toggle-row">
+              <div class="control-info">
+                <div class="quick-action-icon icon-emerald">🛡️</div>
+                <div class="control-text">
+                  <h4>Biometric Passkey Authentication (FIDO2 / WebAuthn)</h4>
+                  <p>Require Face ID, Touch ID, or Windows Hello for high-value transactions.</p>
+                </div>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked onclick="window.showToast('Biometric security active', 'info')">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="control-toggle-row">
+              <div class="control-info">
+                <div class="quick-action-icon icon-cyan">📲</div>
+                <div class="control-text">
+                  <h4>SMS & Authenticator 2-Factor Authentication</h4>
+                  <p>Send one-time security challenges for new beneficiary additions and wires.</p>
+                </div>
+              </div>
+              <label class="switch">
+                <input type="checkbox" checked onclick="window.showToast('2FA enforcement updated', 'info')">
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="control-toggle-row">
+              <div class="control-info">
+                <div class="quick-action-icon icon-blue">📄</div>
+                <div class="control-text">
+                  <h4>Official Bank Statements</h4>
+                  <p>Download monthly electronic account statement advice (PDF/CSV).</p>
+                </div>
+              </div>
+              <button class="btn btn-secondary" id="downloadStatementBtn">
+                📥 Download Statement
+              </button>
+            </div>
+
+            <div class="control-toggle-row">
+              <div class="control-info">
+                <div class="quick-action-icon icon-purple">👥</div>
+                <div class="control-text">
+                  <h4>Switch Banking Portal</h4>
+                  <p>Toggle between Personal Private Wealth and Commercial Enterprise accounts.</p>
+                </div>
+              </div>
+              <button class="btn btn-secondary" onclick="window.openModal('profileSwitcherModal')">
+                Switch Portal
+              </button>
+            </div>
+
+            <div class="control-toggle-row" style="border-color: rgba(244, 63, 94, 0.3);">
+              <div class="control-info">
+                <div class="quick-action-icon icon-rose">⚠️</div>
+                <div class="control-text">
+                  <h4 style="color: var(--accent-rose);">Reset Demo Platform Data</h4>
+                  <p>Erase current transactions and restore original simulated mock state.</p>
+                </div>
+              </div>
+              <button class="btn btn-danger" id="resetAllDataBtn">
+                Reset All State
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       AI FINANCIAL ASSISTANT FLOATING DRAWER
+       ========================================================================= -->
+  <button class="floating-assistant-btn" id="floatingAssistantBtn" title="Ask Apex AI Banker">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </button>
+
+  <div class="assistant-drawer" id="assistantDrawer">
+    <div class="assistant-header">
+      <div class="assistant-info">
+        <div style="font-size: 1.5rem;">🤖</div>
+        <div>
+          <div class="assistant-title">Apex AI Banker</div>
+          <div class="assistant-subtitle">Intelligent Financial Advisor</div>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="closeAssistantBtn" style="color: #FFFFFF;">✕</button>
+    </div>
+
+    <div class="assistant-messages" id="assistantMessages">
+      <div class="ai-bubble">
+        Hello! I'm your **Apex AI Banker**. I have real-time visibility into your accounts, cash flow, and vault interest. How can I help you today?
+      </div>
+    </div>
+
+    <div class="assistant-quick-prompts">
+      <div class="quick-prompt-chip" data-prompt="What is my current balance?">💰 Check Balance</div>
+      <div class="quick-prompt-chip" data-prompt="Analyze my spending this month">📊 Spending</div>
+      <div class="quick-prompt-chip" data-prompt="How much interest does my vault earn?">🏦 4.85% APY</div>
+      <div class="quick-prompt-chip" data-prompt="How do I freeze my card?">💳 Freeze Card</div>
+    </div>
+
+    <div class="assistant-input-box">
+      <input type="text" class="assistant-input" id="assistantInput" placeholder="Ask about balances, interest, advice..." />
+      <button class="btn btn-primary btn-sm" id="assistantSendBtn">Send</button>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===========================================================================
+     MODALS
+     =========================================================================== -->
+
+<!-- 1. MOBILE CHECK DEPOSIT MODAL -->
+<div class="modal-overlay" id="mobileCheckDepositModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Optical Mobile Check Deposit</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <form id="mobileDepositForm">
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Deposit Into Account</label>
+          <select class="form-select" id="depositTargetAccount"></select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Check Amount ($)</label>
+          <input type="number" step="0.01" min="1" class="form-input amount-input-lg" id="depositAmountInput" placeholder="0.00" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Check Serial Number</label>
+          <input type="text" class="form-input" id="depositCheckNumber" placeholder="e.g. 84102" value="84102" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px;">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">Check Front</div>
+            <div class="check-scan-box" id="checkFrontBox">
+              <span style="font-size: 1.5rem;">📷</span>
+              <span style="font-size: 0.75rem; text-align: center;">Click to scan front of check</span>
+            </div>
+          </div>
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 600; margin-bottom: 6px;">Check Back Endorsement</div>
+            <div class="check-scan-box" id="checkBackBox">
+              <span style="font-size: 1.5rem;">✍️</span>
+              <span style="font-size: 0.75rem; text-align: center;">Click to scan back endorsement</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Process Instant Deposit</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 2. PROFILE SWITCHER MODAL -->
+<div class="modal-overlay" id="profileSwitcherModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Switch Banking Profile</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <div class="modal-body" style="display: flex; flex-direction: column; gap: 12px;">
+      <div class="user-profile-badge select-profile-option" data-profile-id="personal" style="padding: 16px;">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" class="user-avatar" alt="Elena" />
+        <div class="user-info">
+          <div class="user-name">Elena Rostova</div>
+          <div class="user-account-type">Personal Private Wealth Elite (3 Accounts)</div>
+        </div>
+        <span class="btn btn-sm btn-primary">Select</span>
+      </div>
+
+      <div class="user-profile-badge select-profile-option" data-profile-id="business" style="padding: 16px;">
+        <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=150&q=80" class="user-avatar" alt="TechFlow" />
+        <div class="user-info">
+          <div class="user-name">TechFlow Dynamics LLC</div>
+          <div class="user-account-type">Commercial Operating & Escrow (3 Accounts)</div>
+        </div>
+        <span class="btn btn-sm btn-primary">Select</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 3. ADD BENEFICIARY MODAL -->
+<div class="modal-overlay" id="addBeneficiaryModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Add New Payee / Contact</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <form id="addBeneficiaryForm">
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" id="newBenName" placeholder="e.g. Jordan Matthews" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email, Phone, or @Handle</label>
+          <input type="text" class="form-input" id="newBenHandle" placeholder="jordan@apexbank.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Bank Institution</label>
+          <input type="text" class="form-input" id="newBenBank" placeholder="Apex Bank, Chase, Citibank..." />
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save Recipient</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 4. ISSUE VIRTUAL CARD MODAL -->
+<div class="modal-overlay" id="newVirtualCardModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Generate Disposable Virtual Card</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <form id="createVirtualCardForm">
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Card Nickname / Label</label>
+          <input type="text" class="form-input" id="vCardNickname" placeholder="e.g. Cloud Subscriptions Shield" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Spending Limit (USD)</label>
+          <input type="number" class="form-input" id="vCardLimit" placeholder="2000" value="2000" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Payment Network</label>
+          <select class="form-select" id="vCardNetwork">
+            <option value="VISA">VISA World Elite</option>
+            <option value="MASTERCARD">Mastercard Black</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Card Aesthetic</label>
+          <select class="form-select" id="vCardTheme">
+            <option value="card-theme-emerald">Emerald Jade Hologram</option>
+            <option value="card-theme-sapphire">Deep Sapphire Blue</option>
+            <option value="card-theme-titanium">Titanium Obsidian</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Generate Instant Virtual Card</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 5. CONTRIBUTE TO GOAL MODAL -->
+<div class="modal-overlay" id="contributeGoalModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Deposit Into Vault</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <form id="contributeGoalForm">
+      <div class="modal-body">
+        <input type="hidden" id="depositGoalId" />
+        <div style="font-size: 0.95rem; margin-bottom: 16px;">
+          Allocating funds into: <strong id="depositGoalNameDisplay" style="color: var(--accent-emerald);">Goal</strong>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Deposit Amount (USD)</label>
+          <div class="amount-input-container">
+            <span class="currency-symbol">$</span>
+            <input type="number" step="0.01" min="1" class="form-input amount-input-lg" id="depositGoalAmount" placeholder="500.00" required />
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Confirm Vault Allocation</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 6. CREATE NEW GOAL MODAL -->
+<div class="modal-overlay" id="newGoalModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Create New Savings Vault</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <form id="createNewGoalForm">
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label">Vault Goal Name</label>
+          <input type="text" class="form-input" id="newGoalName" placeholder="e.g. Alpine Ski Chalet" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Target Amount ($)</label>
+          <input type="number" step="100" min="100" class="form-input" id="newGoalTargetAmount" placeholder="15000" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Target Date</label>
+          <input type="text" class="form-input" id="newGoalTargetDate" placeholder="e.g. Dec 2028" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Icon Emoji</label>
+          <select class="form-select" id="newGoalIcon">
+            <option value="🏔️">🏔️ Vacation & Travel</option>
+            <option value="🛡️">🛡️ Emergency & Safety Net</option>
+            <option value="🚗">🚗 Vehicle & Automotive</option>
+            <option value="🏡">🏡 Real Estate & Property</option>
+            <option value="💍">💍 Luxury & Jewelry</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-trigger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Create Vault</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- 7. DIGITAL RECEIPT MODAL -->
+<div class="modal-overlay" id="digitalReceiptModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Electronic Transfer Advice</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <div class="modal-body" id="digitalReceiptContent"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary modal-close-trigger">Close</button>
+      <button type="button" class="btn btn-primary" onclick="window.print()">🖨️ Print / Save PDF</button>
+    </div>
+  </div>
+</div>
+
+<!-- 8. NOTIFICATIONS MODAL -->
+<div class="modal-overlay" id="notificationsModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 class="modal-title">Real-Time Security & Financial Alerts</h3>
+      <button class="modal-close-btn modal-close-trigger">✕</button>
+    </div>
+    <div class="modal-body" id="notificationsDrawerList" style="padding: 0;"></div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary modal-close-trigger">Dismiss</button>
+    </div>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/store.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/transfers.js"></script>
+<script src="js/assistant.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
