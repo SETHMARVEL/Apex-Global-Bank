@@ -1,9 +1,9 @@
 /**
- * Apex Bank - Central Reactive State Management & Data Store
+ * Unity Capital Bank - Central Reactive State Management & Data Store
  * Handles localStorage synchronization, transactions, profiles, cards, and goals.
  */
 
-const STORAGE_KEY = 'apex_bank_state_v1';
+const STORAGE_KEY = 'unity_capital_bank_state_v1';
 
 const DEFAULT_STATE = {
   activeProfileId: 'personal',
@@ -14,7 +14,7 @@ const DEFAULT_STATE = {
     personal: {
       id: 'personal',
       name: 'Elena Rostova',
-      email: 'elena.rostova@apexbank.vip',
+      email: 'elena.rostova@unitycapital.vip',
       phone: '+1 (555) 234-8921',
       tier: 'Private Wealth Elite',
       avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80',
@@ -185,9 +185,9 @@ const DEFAULT_STATE = {
     {
       id: 'ben_1',
       name: 'Alex Rivera',
-      handle: 'alex.r@apexbank.com',
+      handle: 'alex.r@unitycapital.com',
       avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80',
-      bank: 'Apex Bank Instant',
+      bank: 'Unity Capital Instant',
       accountNum: '··· 8192'
     },
     {
@@ -290,7 +290,7 @@ const DEFAULT_STATE = {
     },
     {
       id: 'bill_electric',
-      provider: 'Apex Clean Power Utility',
+      provider: 'Unity Clean Power Utility',
       category: 'Utilities',
       amount: 112.40,
       dueDate: 'Paid on Nov 1',
@@ -333,7 +333,7 @@ const DEFAULT_STATE = {
       id: 'tx_103',
       profileId: 'personal',
       accId: 'acc_svg_01',
-      merchant: 'Apex Monthly Compound Interest',
+      merchant: 'Unity Monthly Compound Interest',
       category: 'Yield & APY',
       amount: 168.42,
       type: 'credit',
@@ -481,9 +481,13 @@ class BankStore {
 
   loadState() {
     try {
-      const saved = localStorage.getItem(STORAGE_KEY);
+      const saved = localStorage.getItem(STORAGE_KEY) || localStorage.getItem('apex_bank_state_v1');
       if (saved) {
-        const parsed = JSON.parse(saved);
+        let serialized = saved.replace(/Apex Bank/g, 'Unity Capital Bank')
+                              .replace(/Apex/g, 'Unity Capital')
+                              .replace(/apexbank\.vip/g, 'unitycapital.vip')
+                              .replace(/apexbank\.com/g, 'unitycapital.com');
+        const parsed = JSON.parse(serialized);
         // Merge with defaults to ensure schema consistency
         return { ...DEFAULT_STATE, ...parsed };
       }
@@ -590,7 +594,7 @@ class BankStore {
       category = 'Internal Transfer';
       icon = '🔄';
     } else if (toType === 'p2p') {
-      transactionTitle = `Apex Pay to ${recipient.name || recipient}`;
+      transactionTitle = `Unity Pay to ${recipient.name || recipient}`;
       category = 'P2P Transfer';
       icon = '🤝';
     } else if (toType === 'wire') {
@@ -655,7 +659,7 @@ class BankStore {
       isoDate: new Date().toISOString(),
       status: 'Completed',
       icon: '📸',
-      note: 'Verified via Apex Instant Optical Verification'
+      note: 'Verified via Unity Instant Optical Verification'
     };
 
     this.state.transactions.unshift(newTx);

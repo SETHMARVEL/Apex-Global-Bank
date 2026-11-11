@@ -1,4 +1,4 @@
-# 🏦 Apex Global Bank - Next-Generation Digital Banking Platform
+# 🏦 Unity Capital Bank - Next-Generation Digital Banking Platform
 
 A modern, responsive, institutional-grade online banking web application built with a high-fidelity fintech design system.
 
@@ -13,7 +13,7 @@ A modern, responsive, institutional-grade online banking web application built w
 - **Full State Persistence**: Real-time `localStorage` synchronization for deposits, transfers, card freezes, bills, and goals.
 
 ### 2. 💸 Transfers & Payments Suite
-- **Apex Pay (Instant P2P)**: Send instant funds to contacts or handles (`@alex.r`, `@emily.w`, etc.).
+- **Unity Pay (Instant P2P)**: Send instant funds to contacts or handles (`@alex.r`, `@emily.w`, etc.).
 - **Account-to-Account (Internal)**: Shift funds seamlessly between Checking and the 4.85% APY Vault.
 - **Domestic ACH & Wire**: Complete Routing & Account number settlement with fee breakdown.
 - **SWIFT & International FX**: Real-time mid-market currency exchange rates (USD, EUR, GBP, JPY, CAD, CHF, AUD).
@@ -47,7 +47,7 @@ A modern, responsive, institutional-grade online banking web application built w
 - High-DPI canvas charts tracking monthly inflow vs. outflow.
 - Category breakdowns (Travel, Hardware, Groceries, Dining, Wellness).
 
-### 9. 🤖 Apex AI Banker (In-App Assistant)
+### 9. 🤖 Unity AI Banker (In-App Assistant)
 - Context-aware virtual banker analyzing current balance, spending patterns, card controls, and vault growth.
 - Floating drawer with quick-prompt chips.
 
@@ -70,7 +70,7 @@ Double-click `index.html` or right-click `index.html` -> **Open with Google Chro
 ## 📁 Project Structure
 
 ```
-apex-banking/
+unity-capital-banking/
 ├── index.html         # Master single-page banking application
 ├── serve.ps1          # Zero-dependency local web server
 ├── README.md          # Project documentation
@@ -80,7 +80,7 @@ apex-banking/
     ├── store.js       # Central reactive state management & localStorage persistence
     ├── cards.js       # 3D cards engine, flip animation, limit sliders, virtual card creator
     ├── transfers.js   # Money movement engine, P2P, SWIFT, mobile check deposit
-    ├── assistant.js   # Apex AI Banker intelligent chat agent
+    ├── assistant.js   # Unity AI Banker intelligent chat agent
     ├── ui.js          # DOM rendering, modals, toast system, loan calculator, chart
     └── app.js         # Application bootstrap & reactive event listeners
 ```

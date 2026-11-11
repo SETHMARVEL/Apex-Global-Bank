@@ -1,9 +1,9 @@
 /**
- * Apex Bank - Application Bootstrap & Main Entry Point
+ * Unity Capital Bank - Application Bootstrap & Main Entry Point
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 Initializing Apex Global Digital Banking Portal...');
+  console.log('🚀 Initializing Unity Capital Digital Banking Portal...');
 
   // Initialize all subsystems
   if (window.uiModule) window.uiModule.init();
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadStmtBtn.addEventListener('click', () => {
       window.showToast('Generating official encrypted PDF bank statement...', 'info');
       setTimeout(() => {
-        window.showToast('Statement downloaded: Apex_Statement_Nov_2026.pdf', 'success');
+        window.showToast('Statement downloaded: Unity_Capital_Statement_Nov_2026.pdf', 'success');
       }, 1200);
     });
   }

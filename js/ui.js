@@ -1,5 +1,5 @@
 /**
- * Apex Bank - UI Controller, View Routing, Modals, Toasts & Financial Calculator
+ * Unity Capital Bank - UI Controller, View Routing, Modals, Toasts & Financial Calculator
  */
 
 function initUI() {
@@ -381,7 +381,7 @@ function setupNavigation() {
 
   const viewMeta = {
     dashboard: { title: 'Financial Overview', sub: 'Welcome back to your premier command center' },
-    transfers: { title: 'Transfers & Payments', sub: 'Domestic, international wires, and instant Apex Pay' },
+    transfers: { title: 'Transfers & Payments', sub: 'Domestic, international wires, and instant Unity Pay' },
     cards: { title: 'Card Management', sub: 'Manage physical metal, virtual single-use, and travel cards' },
     goals: { title: 'Vaults & Goals', sub: 'Smart automated savings targets & emergency funds' },
     bills: { title: 'Bill Pay & Subscriptions', sub: 'Automate utilities, telecom, and enterprise subscriptions' },

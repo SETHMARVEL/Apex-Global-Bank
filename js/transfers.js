@@ -1,5 +1,5 @@
 /**
- * Apex Bank - Money Movement, P2P Transfers & Optical Mobile Check Deposit
+ * Unity Capital Bank - Money Movement, P2P Transfers & Optical Mobile Check Deposit
  */
 
 const FX_RATES = {
@@ -341,14 +341,14 @@ function showDigitalReceipt(transaction, fee = 0) {
   content.innerHTML = `
     <div class="digital-receipt">
       <div class="receipt-header">
-        <div class="receipt-logo">APEX GLOBAL BANK</div>
+        <div class="receipt-logo">UNITY CAPITAL BANK</div>
         <div style="font-size: 0.75rem; color: #64748B; margin-bottom: 8px;">ELECTRONIC FUNDS TRANSFER ADVICE</div>
         <div class="receipt-badge">Completed & Verified</div>
       </div>
 
       <div class="receipt-row">
         <span style="color: #64748B;">Reference ID:</span>
-        <span style="font-family: monospace; font-weight: 700;">#APX-${transaction.id.replace('tx_', '')}</span>
+        <span style="font-family: monospace; font-weight: 700;">#UCB-${transaction.id.replace('tx_', '')}</span>
       </div>
 
       <div class="receipt-row">
@@ -382,7 +382,7 @@ function showDigitalReceipt(transaction, fee = 0) {
       </div>
 
       <div style="margin-top: 16px; font-size: 0.7rem; color: #94A3B8; text-align: center;">
-        Apex Global Bank, N.A. · FDIC Insured · 256-bit TLS Encrypted Transmission
+        Unity Capital Bank, N.A. · FDIC Insured · 256-bit TLS Encrypted Transmission
       </div>
     </div>
   `;

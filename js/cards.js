@@ -1,5 +1,5 @@
 /**
- * Apex Bank - Interactive 3D Cards Engine & Virtual Card Generator
+ * Unity Capital Bank - Interactive 3D Cards Engine & Virtual Card Generator
  */
 
 let activeCardIndex = 0;
@@ -95,7 +95,7 @@ function renderCardsSection() {
           <div class="card-white-bar">${isMasked ? '•••' : currentCard.cvv}</div>
         </div>
         <div class="card-disclaimer-text">
-          Issued by Apex Global Bank, N.A. Member FDIC. Use of this card is subject to the terms and conditions of the cardholder agreement. 24/7 Concierge: +1 (800) 555-APEX.
+          Issued by Unity Capital Bank, N.A. Member FDIC. Use of this card is subject to the terms and conditions of the cardholder agreement. 24/7 Concierge: +1 (800) 555-UNITY.
         </div>
       </div>
     </div>

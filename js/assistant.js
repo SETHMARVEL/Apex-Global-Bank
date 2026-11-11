@@ -1,5 +1,5 @@
 /**
- * Apex Bank - Intelligent AI Financial Assistant
+ * Unity Capital Bank - Intelligent AI Financial Assistant
  * Context-aware banking agent analyzing real account balances, spending, and interest.
  */
 
@@ -90,7 +90,7 @@ function generateAiResponse(query) {
   if (q.includes('balance') || q.includes('how much money') || q.includes('net worth')) {
     const checking = accounts.find(a => a.type === 'checking');
     const savings = accounts.find(a => a.type === 'savings');
-    return `Hello ${profile.name.split(' ')[0]}! 💼\n\nYour total net worth across Apex accounts is **$${totalBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}**:\n` +
+    return `Hello ${profile.name.split(' ')[0]}! 💼\n\nYour total net worth across Unity Capital accounts is **$${totalBalance.toLocaleString('en-US', { minimumFractionDigits: 2 })}**:\n` +
       `• **${checking ? checking.name : 'Checking'}**: $${(checking ? checking.balance : 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\n` +
       `• **${savings ? savings.name : 'Vault Savings'}**: $${(savings ? savings.balance : 0).toLocaleString('en-US', { minimumFractionDigits: 2 })}\n` +
       `\nWould you like me to move funds into your 4.85% APY Vault?`;
@@ -112,7 +112,7 @@ function generateAiResponse(query) {
     const yearlyEarn = bal * 0.0485;
     const monthlyEarn = yearlyEarn / 12;
 
-    return `🏦 **Apex High-Yield Vault Details:**\n\n` +
+    return `🏦 **Unity Capital High-Yield Vault Details:**\n\n` +
       `• Current APY: **4.85% compounded daily**\n` +
       `• Current Vault Balance: **$${bal.toLocaleString('en-US', { minimumFractionDigits: 2 })}**\n` +
       `• Estimated Monthly Interest: **+$${monthlyEarn.toFixed(2)} / mo**\n` +
@@ -136,7 +136,7 @@ function generateAiResponse(query) {
   if (q.includes('transfer') || q.includes('send money') || q.includes('wire')) {
     return `💸 **Money Movement:**\n\n` +
       `You can send instant funds with:\n` +
-      `1. **Apex Pay (P2P)**: Free instant transfers to any email, phone, or contact.\n` +
+      `1. **Unity Pay (P2P)**: Free instant transfers to any email, phone, or contact.\n` +
       `2. **Domestic ACH/Wire**: Routing & Account settlement.\n` +
       `3. **SWIFT / International**: Real-time FX exchange with zero hidden spreads.\n\n` +
       `Tap **Transfers** in the navigation or use the "Send Money" quick button on your dashboard.`;
@@ -149,7 +149,7 @@ function generateAiResponse(query) {
   }
 
   // Default intelligent fallback
-  return `I'm here to assist with your Apex Banking needs! You can ask me about:\n` +
+  return `I'm here to assist with your Unity Capital Banking needs! You can ask me about:\n` +
     `• "What is my current balance?"\n` +
     `• "Analyze my spending this month"\n` +
     `• "How much interest does my vault earn?"\n` +

@@ -1,4 +1,4 @@
-# Apex Bank - Lightweight Local HTTP Server (Zero Dependencies)
+# Unity Capital Bank - Lightweight Local HTTP Server (Zero Dependencies)
 # Powered by .NET HttpListener built into Windows PowerShell
 
 param(
@@ -10,7 +10,7 @@ $Prefix = "http://${HostName}:${Port}/"
 $Folder = $PSScriptRoot
 
 Write-Host '==========================================================' -ForegroundColor Cyan
-Write-Host '  APEX GLOBAL BANK - Local Development Web Server' -ForegroundColor Green
+Write-Host '  UNITY CAPITAL BANK - Local Development Web Server' -ForegroundColor Green
 Write-Host '==========================================================' -ForegroundColor Cyan
 Write-Host " Serving:  $Folder" -ForegroundColor Gray
 Write-Host " Server:   $Prefix" -ForegroundColor White
@@ -85,5 +85,5 @@ try {
 } finally {
     $Listener.Stop()
     $Listener.Close()
-    Write-Host 'Apex Bank server stopped.' -ForegroundColor Red
+    Write-Host 'Unity Capital Bank server stopped.' -ForegroundColor Red
 }
