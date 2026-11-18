@@ -390,41 +390,75 @@ function setupNavigation() {
     security: { title: 'Security & Profile Hub', sub: '2FA authentication, multi-profile switcher & bank statements' }
   };
 
+  const switchView = (targetView) => {
+    // Update sidebar active class
+    document.querySelectorAll('.nav-item[data-view]').forEach(n => {
+      n.classList.toggle('active', n.dataset.view === targetView);
+    });
+
+    // Update mobile bottom nav active class
+    document.querySelectorAll('.mobile-nav-item[data-view]').forEach(n => {
+      n.classList.toggle('active', n.dataset.view === targetView);
+    });
+
+    // Update view sections
+    viewSections.forEach(sec => {
+      sec.classList.remove('active');
+      if (sec.id === `view_${targetView}`) {
+        sec.classList.add('active');
+      }
+    });
+
+    // Update Header Text
+    if (viewMeta[targetView]) {
+      if (pageTitle) pageTitle.textContent = viewMeta[targetView].title;
+      if (pageSubtitle) pageSubtitle.textContent = viewMeta[targetView].sub;
+    }
+
+    // Close mobile drawer if opened
+    closeMobileSidebar();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   navItems.forEach(item => {
     item.addEventListener('click', (e) => {
       e.preventDefault();
-      const targetView = item.dataset.view;
-
-      // Update sidebar active class
-      navItems.forEach(n => n.classList.remove('active'));
-      item.classList.add('active');
-
-      // Update view sections
-      viewSections.forEach(sec => {
-        sec.classList.remove('active');
-        if (sec.id === `view_${targetView}`) {
-          sec.classList.add('active');
-        }
-      });
-
-      // Update Header Text
-      if (viewMeta[targetView]) {
-        if (pageTitle) pageTitle.textContent = viewMeta[targetView].title;
-        if (pageSubtitle) pageSubtitle.textContent = viewMeta[targetView].sub;
-      }
-
-      // Close mobile drawer if opened
-      document.querySelector('.sidebar')?.classList.remove('open');
+      switchView(item.dataset.view);
     });
   });
 
-  // Mobile menu toggle
-  const mobileToggle = document.getElementById('mobileMenuToggleBtn');
-  if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
-      document.querySelector('.sidebar')?.classList.toggle('open');
+  // Mobile bottom nav items
+  document.querySelectorAll('.mobile-nav-item[data-view]').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      switchView(item.dataset.view);
     });
-  }
+  });
+
+  // Mobile sidebar drawer controls
+  const openMobileSidebar = () => {
+    document.querySelector('.sidebar')?.classList.add('open');
+    document.getElementById('sidebarBackdrop')?.classList.add('active');
+    document.body.classList.add('sidebar-open-locked');
+  };
+
+  const closeMobileSidebar = () => {
+    document.querySelector('.sidebar')?.classList.remove('open');
+    document.getElementById('sidebarBackdrop')?.classList.remove('active');
+    document.body.classList.remove('sidebar-open-locked');
+  };
+
+  const mobileToggle = document.getElementById('mobileMenuToggleBtn');
+  if (mobileToggle) mobileToggle.addEventListener('click', openMobileSidebar);
+
+  const sidebarClose = document.getElementById('sidebarCloseBtn');
+  if (sidebarClose) sidebarClose.addEventListener('click', closeMobileSidebar);
+
+  const backdrop = document.getElementById('sidebarBackdrop');
+  if (backdrop) backdrop.addEventListener('click', closeMobileSidebar);
+
+  const mobileMoreBtn = document.getElementById('mobileMenuMoreBtn');
+  if (mobileMoreBtn) mobileMoreBtn.addEventListener('click', openMobileSidebar);
 
   // Quick Action Buttons on Dashboard linking to views
   document.querySelectorAll('[data-goto-view]').forEach(btn => {

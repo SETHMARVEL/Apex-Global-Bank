@@ -1767,10 +1767,124 @@ input:checked + .slider:before {
   font-family: monospace !important;
 }
 
-/* Responsive Media Queries */
+/* Mobile Bottom App Navigation */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-color);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 450;
+  padding: 0 8px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  flex: 1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-nav-item svg {
+  width: 22px;
+  height: 22px;
+  transition: transform var(--transition-fast);
+}
+
+.mobile-nav-item.active {
+  color: var(--accent-emerald);
+}
+
+.mobile-nav-item.active svg {
+  transform: translateY(-2px);
+}
+
+.mobile-nav-item:active {
+  transform: scale(0.92);
+}
+
+/* Sidebar Backdrop Overlay */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 95;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  pointer-events: none;
+}
+
+.sidebar-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.sidebar-close-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+}
+
+.sidebar-close-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-card);
+}
+
+body.sidebar-open-locked {
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Media Queries
+   ========================================================================== */
+
+/* Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Tablets (<= 900px) */
 @media (max-width: 900px) {
   .sidebar {
     transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
   }
 
   .sidebar.open {
@@ -1782,7 +1896,17 @@ input:checked + .slider:before {
   }
 
   .menu-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sidebar-backdrop {
     display: block;
+  }
+
+  .sidebar-close-btn {
+    display: flex;
   }
 
   .view-container {
@@ -1791,17 +1915,299 @@ input:checked + .slider:before {
 
   .app-header {
     padding: 0 16px;
+    height: 64px;
   }
 
   .net-worth-banner {
     flex-direction: column;
     align-items: flex-start;
     gap: 20px;
+    padding: 24px 20px;
+  }
+}
+
+/* Mobile Devices (<= 768px) */
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
   }
 
-  .assistant-drawer {
-    width: calc(100vw - 32px);
+  .main-wrapper {
+    padding-bottom: 74px; /* Space for bottom navigation */
+  }
+
+  /* Floating Assistant button reposition */
+  .floating-assistant-btn {
+    bottom: 80px;
     right: 16px;
-    left: 16px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .floating-assistant-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Assistant Drawer - Mobile Bottom Sheet */
+  .assistant-drawer {
+    position: fixed;
+    inset: auto 0 0 0;
+    width: 100%;
+    height: 75vh;
+    border-radius: 20px 20px 0 0;
+    z-index: 550;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Net worth banner */
+  .net-worth-amount {
+    font-size: clamp(1.85rem, 6.5vw, 2.5rem);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .net-worth-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .net-worth-actions .btn {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Quick Actions Grid - 3 columns */
+  .quick-actions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .quick-action-card {
+    padding: 12px 6px;
+    gap: 6px;
+  }
+
+  .quick-action-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.15rem;
+  }
+
+  .quick-action-label {
+    font-size: 0.75rem;
+  }
+
+  /* Responsive 3D Card */
+  .card-showcase-container {
+    padding: 0 4px;
+  }
+
+  .credit-card-3d {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1.586 / 1;
+    min-height: 185px;
+  }
+
+  .card-face {
+    padding: 16px;
+  }
+
+  .card-chip {
+    width: 38px;
+    height: 28px;
+  }
+
+  .card-number-display {
+    font-size: clamp(0.95rem, 4.3vw, 1.25rem);
+    letter-spacing: 0.12em;
+  }
+
+  .card-holder-name, .card-expiry-val {
+    font-size: 0.8rem;
+  }
+
+  .card-controls-panel {
+    gap: 10px;
+  }
+
+  /* Accounts Subgrid */
+  .accounts-subgrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .account-card-mini {
+    padding: 16px;
+  }
+
+  .acc-balance {
+    font-size: 1.35rem;
+  }
+
+  /* Transactions Filter Bar */
+  .transactions-filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-input-box {
+    width: 100%;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+
+  /* Transaction Items */
+  .transaction-item {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .tx-icon-box {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .tx-merchant {
+    font-size: 0.88rem;
+  }
+
+  .tx-amount {
+    font-size: 0.92rem;
+  }
+
+  /* Transfers Form */
+  .transfer-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .transfer-tab-btn {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+    white-space: nowrap;
+  }
+
+  .amount-input-lg {
+    font-size: 1.5rem;
+    padding-left: 32px;
+  }
+
+  .currency-symbol {
+    font-size: 1.25rem;
+    left: 12px;
+  }
+
+  /* Check scanner */
+  .check-scan-box {
+    height: 140px;
+  }
+
+  /* Modals - Mobile Bottom Sheet Style */
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-box {
+    max-width: 100%;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    max-height: 88vh;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+  }
+
+  .modal-body {
+    padding: 18px 20px;
+  }
+
+  .modal-footer {
+    padding: 14px 20px;
+  }
+
+  /* Toast Container */
+  .toast-container {
+    left: 14px;
+    right: 14px;
+    bottom: 74px;
+  }
+
+  .toast {
+    min-width: unset;
+    width: 100%;
+  }
+
+  /* Goals Grid */
+  .goals-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .goal-card {
+    padding: 18px;
+  }
+}
+
+/* Small Smart Phones (<= 480px) */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.15rem;
+  }
+
+  .page-subtitle {
+    display: none;
+  }
+
+  .header-security-badge span {
+    display: none;
+  }
+
+  .header-security-badge {
+    padding: 6px;
+    border-radius: 50%;
+  }
+
+  .net-worth-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .quick-action-card {
+    padding: 10px 4px;
+  }
+
+  .quick-action-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .quick-action-label {
+    font-size: 0.7rem;
+  }
+
+  .card-panel {
+    padding: 18px 14px;
+    border-radius: var(--radius-lg);
   }
 }

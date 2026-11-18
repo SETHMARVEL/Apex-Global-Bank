@@ -32,6 +32,7 @@
           <span class="brand-tier">Private Wealth</span>
         </div>
       </a>
+      <button class="sidebar-close-btn" id="sidebarCloseBtn" aria-label="Close Navigation">✕</button>
     </div>
 
     <nav class="sidebar-nav">
@@ -124,6 +125,9 @@
     </div>
   </aside>
 
+  <!-- Mobile Sidebar Backdrop Overlay -->
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
   <!-- =========================================================================
        MAIN CONTENT WRAPPER
        ========================================================================= -->
@@ -147,7 +151,7 @@
 
       <div class="header-actions">
         <!-- FDIC / Encryption Badge -->
-        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1); padding: 6px 12px; border-radius: var(--radius-full); font-weight: 600;">
+        <div class="header-security-badge" style="display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: var(--accent-emerald); background: rgba(16, 185, 129, 0.1); padding: 6px 12px; border-radius: var(--radius-full); font-weight: 600;">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
           </svg>
@@ -842,6 +846,47 @@
       <button class="btn btn-primary btn-sm" id="assistantSendBtn">Send</button>
     </div>
   </div>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav">
+    <button class="mobile-nav-item active" data-view="dashboard">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"></rect>
+        <rect x="14" y="3" width="7" height="7"></rect>
+        <rect x="14" y="14" width="7" height="7"></rect>
+        <rect x="3" y="14" width="7" height="7"></rect>
+      </svg>
+      <span>Overview</span>
+    </button>
+    <button class="mobile-nav-item" data-view="transfers">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <polyline points="19 12 12 19 5 12"></polyline>
+      </svg>
+      <span>Transfer</span>
+    </button>
+    <button class="mobile-nav-item" data-view="cards">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+        <line x1="1" y1="10" x2="23" y2="10"></line>
+      </svg>
+      <span>Cards</span>
+    </button>
+    <button class="mobile-nav-item" data-view="goals">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+      </svg>
+      <span>Vaults</span>
+    </button>
+    <button class="mobile-nav-item" id="mobileMenuMoreBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+      <span>More</span>
+    </button>
+  </nav>
 
 </div>
 
